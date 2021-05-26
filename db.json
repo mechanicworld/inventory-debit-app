@@ -1,0 +1,33 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name-surname": "Test User",
+      "identity-number": 12345678910,
+      "gender":"female",
+      "title":"",
+      "department":"IT",
+      "birthday": "21.01.1989",
+      "start-day-of-employment":"21.01.2016",
+      "end-day-of-employement":"",
+      "inventroy-list":[
+        {
+          "employee-inventory-list":[
+            {
+              "barcode":"1",
+              "serial-number":"1",
+              "bought-from":"Test Ticaret",
+              "invoice-number":"1",
+              "invoice-date":"16.05.2015",
+              "guarantee-expire":"16.05.2017",
+              "brand":"Samsung",
+              "model":"Note 8s",
+              "category":"Cell phone",
+              "information":"Lorem ipsum"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
