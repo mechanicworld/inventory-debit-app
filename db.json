@@ -2,32 +2,210 @@
   "employees": [
     {
       "id": 1,
-      "name-surname": "Test User",
-      "identity-number": 12345678910,
-      "gender":"female",
-      "title":"",
-      "department":"IT",
+      "image": "avatar",
+      "name": "Test User",
+      "identityNumber": 12345678910,
+      "gender": "female",
+      "title": "Manager",
+      "department": "IT",
       "birthday": "21.01.1989",
-      "start-day-of-employment":"21.01.2016",
-      "end-day-of-employement":"",
-      "inventroy-list":[
+      "startDayOfEmployment": "21.01.2016",
+      "endDayOfEmployement": "-",
+      "inventoryList": [
         {
-          "employee-inventory-list":[
-            {
-              "barcode":"1",
-              "serial-number":"1",
-              "bought-from":"Test Ticaret",
-              "invoice-number":"1",
-              "invoice-date":"16.05.2015",
-              "guarantee-expire":"16.05.2017",
-              "brand":"Samsung",
-              "model":"Note 8s",
-              "category":"Cell phone",
-              "information":"Lorem ipsum"
-            }
-          ]
+          "id": 1,
+          "barcode": 1,
+          "serialNumber": 1,
+          "boughtFrom": "Test Ticaret",
+          "invoiceNumber": 123,
+          "invoiceDate": "16.05.2015",
+          "guaranteeExpire": "16.05.2017",
+          "brand": "Samsung",
+          "model": "Note 8s",
+          "category": "Cell phone",
+          "information": "Lorem ipsum"
         }
       ]
+    },
+    {
+      "id": 2,
+      "image": "avatar",
+      "name": "Test User2",
+      "identityNumber": 12345678911,
+      "gender": "female",
+      "title": "Intern",
+      "department": "IT",
+      "birthday": "21.01.1989",
+      "startDayOfEmployment": "21.01.2016",
+      "endDayOfEmployement": "-",
+      "inventoryList": [
+        {
+          "id": 2,
+          "barcode": 2,
+          "serialNumber": 2,
+          "boughtFrom": "Test Ticaret",
+          "invoiceNumber": 124,
+          "invoiceDate": "16.05.2015",
+          "guaranteeExpire": "16.05.2017",
+          "brand": "Samsung",
+          "model": "Note 8s",
+          "category": "Cell phone",
+          "information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "image": "avatar",
+      "name": "Test User 3",
+      "identityNumber": 12345678912,
+      "gender": "female",
+      "title": "Scrum Master",
+      "department": "IT",
+      "birthday": "21.01.1989",
+      "startDayOfEmployment": "21.01.2016",
+      "endDayOfEmployement": "-",
+      "inventoryList": [
+        {
+          "id": 3,
+          "barcode": 3,
+          "serialNumber": 3,
+          "boughtFrom": "Test Ticaret",
+          "invoiceNumber": 125,
+          "invoiceDate": "16.05.2015",
+          "guaranteeExpire": "16.05.2017",
+          "brand": "Samsung",
+          "model": "Note 8s",
+          "category": "Cell phone",
+          "information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "image": "avatar",
+      "name": "Test User 4",
+      "identityNumber": 12345678913,
+      "gender": "female",
+      "title": "Manager",
+      "department": "IT",
+      "birthday": "21.01.1989",
+      "startDayOfEmployment": "21.01.2016",
+      "endDayOfEmployement": "-",
+      "inventoryList": [
+        {
+          "id": 4,
+          "barcode": 4,
+          "serialNumber": 4,
+          "boughtFrom": "Test Ticaret",
+          "invoiceNumber": 126,
+          "invoiceDate": "16.05.2015",
+          "guaranteeExpire": "16.05.2017",
+          "brand": "Samsung",
+          "model": "Note 8s",
+          "category": "Cell phone",
+          "information": "Lorem ipsum dolor sit amet, consectetur adipiscin didunt ut labore et dolore magna"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "image": "avatar",
+      "name": "Test User 5",
+      "identityNumber": 12345678914,
+      "gender": "female",
+      "title": "Recruiter",
+      "department": "IT",
+      "birthday": "21.01.1989",
+      "startDayOfEmployment": "21.01.2016",
+      "endDayOfEmployement": "-",
+      "inventoryList": [
+        {
+          "id": 5,
+          "barcode": 5,
+          "serialNumber": 5,
+          "boughtFrom": "Test Ticaret",
+          "invoiceNumber": 127,
+          "invoiceDate": "16.05.2015",
+          "guaranteeExpire": "16.05.2017",
+          "brand": "Samsung",
+          "model": "Note 8s",
+          "category": "Cell phone",
+          "information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna"
+        }
+      ]
+    }
+  ],
+  "inventoryList": [
+    {
+      "id": 1,
+      "barcode": 1,
+      "serialNumber": 1,
+      "boughtFrom": "Test Ticaret",
+      "invoiceNumber": 123,
+      "invoiceDate": "16.05.2015",
+      "guaranteeExpire": "16.05.2017",
+      "brand": "Samsung",
+      "model": "Note 8s",
+      "category": "Cell phone",
+      "information": "Lorem ipsum",
+      "employeeId": ""
+    },
+    {
+      "id": 2,
+      "barcode": 2,
+      "serialNumber": 2,
+      "boughtFrom": "Test Ticaret",
+      "invoiceNumber": 124,
+      "invoiceDate": "16.05.2015",
+      "guaranteeExpire": "16.05.2017",
+      "brand": "Samsung",
+      "model": "Note 8s",
+      "category": "Cell phone",
+      "information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "employeeId": ""
+    },
+    {
+      "id": 3,
+      "barcode": 3,
+      "serialNumber": 3,
+      "boughtFrom": "Test Ticaret",
+      "invoiceNumber": 125,
+      "invoiceDate": "16.05.2015",
+      "guaranteeExpire": "16.05.2017",
+      "brand": "Samsung",
+      "model": "Note 8s",
+      "category": "Cell phone",
+      "information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
+      "employeeId": ""
+    },
+    {
+      "id": 4,
+      "barcode": 4,
+      "serialNumber": 4,
+      "boughtFrom": "Test Ticaret",
+      "invoiceNumber": 126,
+      "invoiceDate": "16.05.2015",
+      "guaranteeExpire": "16.05.2017",
+      "brand": "Samsung",
+      "model": "Note 8s",
+      "category": "Cell phone",
+      "information": "Lorem ipsum dolor sit amet, consectetur adipiscin didunt ut labore et dolore magna",
+      "employeeId": ""
+    },
+    {
+      "id": 5,
+      "barcode": 5,
+      "serialNumber": 5,
+      "boughtFrom": "Test Ticaret",
+      "invoiceNumber": 127,
+      "invoiceDate": "16.05.2015",
+      "guaranteeExpire": "16.05.2017",
+      "brand": "Samsung",
+      "model": "Note 8s",
+      "category": "Cell phone",
+      "information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
+      "employeeId": ""
     }
   ]
 }
