@@ -3,26 +3,20 @@ import {
   Table,
   Container,
   Row,
-  Col
+  
 } from 'react-bootstrap'
 import Employee from '../../components/Employee/Employee'
 import EmployeeCard from '../../components/EmployeeCard/EmployeeCard'
 import style from './Employees.module.css'
 
-function Employees() {
+function Employees({ employeeList,setEmployeeList }) {
 
-  useEffect(() => {
-    fetchEmployee()
-  }, [])
+ 
 
-  const [employeeList, setEmployeeList] = useState([])
+  
   const [selectedEmployee, setSelectedEmployee] = useState("")
 
-  const fetchEmployee = () => {
-    fetch("http://localhost:5000/employees")
-      .then(response => response.json())
-      .then(data => { setEmployeeList(data) })
-  }
+  
 
   return (
     <Container fluid>

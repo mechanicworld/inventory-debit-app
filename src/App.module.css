@@ -1,9 +1,16 @@
 ul {
   list-style: none;
+  border-bottom: solid rgba(101, 95, 95, 0.17) 0.25rem;
+ 
 }
 
 li {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   
 }
+
+.navlink:link{
+  text-decoration: none;
+}
+

@@ -6,3 +6,27 @@
 .boldLabel{
   font-weight: bold;
 }
+
+.buttonContainer{
+  height: 100%;
+}
+
+.buttonAdding{
+  height:100%;
+  padding: 2rem 0 2rem 0;
+}
+.buttonSelection{
+  height:30%;
+  padding: 1rem 0 1rem 0;
+}
+
+/* .buttonNewItem{
+  transition: 1s;
+} */
+/* .buttonNewItem:hover {
+  background: url("./item-set.jpg") ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  
+} */
