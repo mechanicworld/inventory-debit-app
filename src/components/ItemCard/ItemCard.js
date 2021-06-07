@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Form, Col, Row, Button, Container } from 'react-bootstrap'
 import style from './ItemCard.module.css'
 
-function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setInventoryList, selectedItem, setSelectedItem }) {
+function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setInventoryList, selectedItem, setSelectedItem, employeeList }) {
 
 
   // Modal version 
@@ -46,7 +46,10 @@ function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setIn
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data)
+        if(data.employeeId && data.employeeId !== "Null"){
+          console.log(data)
+
+        }
 
       })
     // add setUpdateItem("") as async function for clear state
@@ -157,13 +160,20 @@ function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setIn
                       <Form.Group >
                         <Form.Label className={` ${style.boldLabel} `} >Employee Id</Form.Label>
                         <Form.Control
-                          type='text'
+                          as="select"
                           placeholder="Enter ..."
-                          value={updatedItem.invoiceNumber}
-                          onChange={(e) => setUpdatedItem({ ...updatedItem, invoiceNumber: e.target.value })}
+                          value={updatedItem.employeeId}     
+                          //setNewItem({ ...newItem, employeeId: e.target.value })                     
+                          onChange={(e) => setUpdatedItem({ ...updatedItem, employeeId: e.target.value }) }
                           disabled={!editing}
                           required
-                        />
+                        >
+                          <option>Null</option>
+                          {                             
+                            employeeList.map((each, index) => {
+                            return <option key={index}> {`${each.identityNumber}-${each.name}`} </option>
+                          })}
+                        </Form.Control>
                       </Form.Group>
 
                     </Col>
@@ -343,12 +353,20 @@ function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setIn
                   <Form.Group >
                     <Form.Label className={` ${style.boldLabel} `} >Employee Id</Form.Label>
                     <Form.Control
-                      type='text'
-                      placeholder={selectedItem.invoiceNumber}
-                      value={updatedItem.invoiceNumber}
-                      onChange={(e) => setUpdatedItem({ ...updatedItem, invoiceNumber: e.target.value })}
-                      disabled={!editing}
-                    />
+                          as="select"
+                          placeholder="Enter ..."
+                          value={updatedItem.employeeId}     
+                          //setNewItem({ ...newItem, employeeId: e.target.value })                     
+                          onChange={(e) => setUpdatedItem({ ...updatedItem, employeeId: e.target.value }) }
+                          disabled={!editing}
+                          required
+                        >
+                          <option>Null</option>
+                          {                             
+                            employeeList.map((each, index) => {
+                            return <option key={index}> {`${each.identityNumber}-${each.name}`} </option>
+                          })}
+                        </Form.Control>
                   </Form.Group>
                 </Form>
               </Col>
@@ -422,17 +440,7 @@ function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setIn
                     />
                   </Form.Group>
                 </Row>
-                {!editing ?
-                  <Row className={`d-flex justify-content-around mt-1`}>
-
-
-                  </Row>
-                  :
-                  <Row className={`d-flex justify-content-around mt-1`}>
-                    <Button variant="success" size="lg" className={`col-5`} onClick={saveChangesHandler}>Save Changes</Button>
-                    <Button variant="danger" size="lg" className={`col-5`} onClick={editingHandler}>Cancel</Button>
-                  </Row>
-                }
+                
 
               </Col>
             </Row>
@@ -489,12 +497,19 @@ function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setIn
                       <Form.Group >
                         <Form.Label className={` ${style.boldLabel} `} >Employee Id</Form.Label>
                         <Form.Control
-                          type='text'
+                          as="select"
                           placeholder="Enter ..."
-                          value={newItem.employeeId}
-                          onChange={(e) => setNewItem({ ...newItem, employeeId: e.target.value })}
+                          value={newItem.employeeId}     
+                          //setNewItem({ ...newItem, employeeId: e.target.value })                     
+                          onChange={(e) => setNewItem({ ...newItem, employeeId: e.target.value }) }
                           required
-                        />
+                        >
+                          <option>Null</option>
+                          {                             
+                            employeeList.map((each, index) => {
+                            return <option key={index}> {`${each.identityNumber}-${each.name}`} </option>
+                          })}
+                        </Form.Control>
                       </Form.Group>
 
                     </Col>

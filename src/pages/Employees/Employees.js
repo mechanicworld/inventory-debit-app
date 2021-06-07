@@ -15,13 +15,25 @@ function Employees({ employeeList,setEmployeeList }) {
 
   
   const [selectedEmployee, setSelectedEmployee] = useState("")
+  const [editing, setEditing] = useState(false)
+  const [adding, setAdding] = useState(false)
 
   
 
   return (
     <Container fluid>
-      <EmployeeCard employeeList={employeeList} selectedEmployee={selectedEmployee} />
+      <EmployeeCard 
+        employeeList={employeeList} 
+        setEmployeeList={setEmployeeList}
+        selectedEmployee={selectedEmployee} 
+        setSelectedEmployee={setSelectedEmployee}
+        editing={editing}
+        setEditing={setEditing}
+        adding={adding}
+        setAdding={setAdding}
+        />
       <Row className={` ${style.table}`}>
+      {editing || adding ? <h2>...</h2> :
         <Table striped bordered hover  >
           <thead>
             <tr>
@@ -38,13 +50,15 @@ function Employees({ employeeList,setEmployeeList }) {
           </thead>
           <tbody>
             {employeeList.map((each, index) => {
-              return <Employee key={index} employee={each} setSelectedEmployee={setSelectedEmployee} />
+              return <Employee key={index}  index={index} employee={each} setSelectedEmployee={setSelectedEmployee} />
             })}
 
           </tbody>
         </Table>
+}
       </Row>
     </Container>
+          
   )
 }
 

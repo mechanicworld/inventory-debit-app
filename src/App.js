@@ -1,4 +1,4 @@
-import React,  { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import style from './App.module.css'
 import Home from './pages/Home/Home'
@@ -16,19 +16,26 @@ function App() {
 
   useEffect(() => {
     fetchEmployee()
+    fetchInventory()
   }, [])
 
   const [employeeList, setEmployeeList] = useState([])
+  const [inventoryList, setInventoryList] = useState([])
 
   const fetchEmployee = () => {
     fetch("http://localhost:5000/employees")
       .then(response => response.json())
       .then(data => { setEmployeeList(data) })
   }
+  const fetchInventory = () => {
+    fetch("http://localhost:5000/inventories")
+      .then(response => response.json())
+      .then(data => { setInventoryList(data) })
+  }
 
   return (
     <Router>
-       <div>
+      <div>
         <nav className="mb-5">
           <ul className="row d-flex justify-content-around">
             <li className="col-3">
@@ -47,13 +54,28 @@ function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route exact path="/inventory">
-            <Inventory employeeList={employeeList} setEmployeeList={setEmployeeList}/>
+            <Inventory 
+              employeeList={employeeList} 
+              setEmployeeList={setEmployeeList} 
+              inventoryList={inventoryList} 
+              setInventoryList={setInventoryList}
+            />
           </Route>
           <Route exact path="/inventory/:slug">
-            <Inventory employeeList={employeeList} setEmployeeList={setEmployeeList}/>
+            <Inventory  
+              employeeList={employeeList} 
+              setEmployeeList={setEmployeeList} 
+              inventoryList={inventoryList} 
+              setInventoryList={setInventoryList}
+           />
           </Route>
           <Route path="/employees">
-            <Employees employeeList={employeeList} setEmployeeList={setEmployeeList} />
+            <Employees  
+              employeeList={employeeList} 
+              setEmployeeList={setEmployeeList} 
+              inventoryList={inventoryList} 
+              setInventoryList={setInventoryList}
+              />
           </Route>
           <Route path="/">
             <Home />

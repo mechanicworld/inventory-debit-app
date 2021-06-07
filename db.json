@@ -134,6 +134,45 @@
           "information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna"
         }
       ]
+    },
+    {
+      "image": "avatar",
+      "inventoryList": [],
+      "name": "asdf",
+      "identityNumber": "asdf",
+      "gender": "asdf",
+      "title": "asdfa",
+      "department": "asdfa",
+      "birthday": "asdfa",
+      "startDayOfEmployment": "asdfa",
+      "endDayOfEmployement": "asdfa",
+      "id": 6
+    },
+    {
+      "image": "avatar",
+      "inventoryList": [],
+      "name": "asdf",
+      "identityNumber": "asdf",
+      "gender": "asdf",
+      "title": "asdf",
+      "department": "asdf",
+      "birthday": "asdf",
+      "startDayOfEmployment": "asdf",
+      "endDayOfEmployement": "asdfasdf",
+      "id": 7
+    },
+    {
+      "image": "avatar",
+      "inventoryList": [],
+      "name": "asdf",
+      "identityNumber": "asdf",
+      "gender": "asdf",
+      "title": "asdf",
+      "department": "asdf",
+      "birthday": "asdf",
+      "startDayOfEmployment": "asdf",
+      "endDayOfEmployement": "asdf",
+      "id": 8
     }
   ],
   "inventories": [
@@ -149,7 +188,7 @@
       "model": "Note 8s",
       "category": "Cell phone",
       "information": "Lorem ipsum",
-      "employeeId": "1"
+      "employeeId": "12345678910-Test User"
     },
     {
       "id": 2,
@@ -163,7 +202,7 @@
       "model": "Note 8s",
       "category": "Cell phone",
       "information": "Lorem ipsum",
-      "employeeId": "1"
+      "employeeId": "12345678911-Test User2"
     },
     {
       "id": 3,
@@ -177,7 +216,7 @@
       "model": "Note 8s",
       "category": "Cell phone",
       "information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
-      "employeeId": "3"
+      "employeeId": "12345678914-Test User 5"
     },
     {
       "id": 4,
@@ -191,7 +230,7 @@
       "model": "Note 8s",
       "category": "Cell phone",
       "information": "Lorem ipsum dolor sit amet, consectetur adipiscin didunt ut labore et dolore magna",
-      "employeeId": "4"
+      "employeeId": "Null"
     },
     {
       "id": 5,
@@ -200,12 +239,54 @@
       "boughtFrom": "Test Ticaret",
       "invoiceNumber": 127,
       "invoiceDate": "16.05.2015",
-      "guaranteeExpire": "16.05.2017",
+      "guaranteeExpire": "16.05.2019",
       "brand": "Samsung",
       "model": "Note 8s",
       "category": "Cell phoneaa",
       "information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
-      "employeeId": "5"
+      "employeeId": "12345678914-Test User 5"
+    },
+    {
+      "barcode": "6",
+      "serialNumber": "7",
+      "boughtFrom": "test",
+      "invoiceNumber": "test",
+      "employeeId": "12345678913-Test User 4",
+      "category": "car",
+      "model": "Leon 2017 1.6 TDI",
+      "brand": "Seat",
+      "invoiceDate": "21.09.17",
+      "guaranteeExpire": "-",
+      "information": "Test",
+      "id": 6
+    },
+    {
+      "barcode": "asdfasdf",
+      "serialNumber": "asdf",
+      "invoiceNumber": "f",
+      "boughtFrom": "f",
+      "employeeId": "12345678912-Test User 3",
+      "invoiceDate": "fd",
+      "guaranteeExpire": "f",
+      "brand": "f",
+      "model": "f",
+      "category": "f",
+      "information": "f",
+      "id": 7
+    },
+    {
+      "barcode": "sdfa",
+      "serialNumber": "asdf",
+      "boughtFrom": "asdf",
+      "invoiceNumber": "asfd",
+      "employeeId": "12345678914-Test User 5",
+      "invoiceDate": "asdf",
+      "guaranteeExpire": "asdf",
+      "brand": "asdf",
+      "model": "asfd",
+      "category": "asdf",
+      "information": "asdf",
+      "id": 8
     }
   ]
 }

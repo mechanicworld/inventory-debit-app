@@ -1,0 +1,13 @@
+ <Col className={`col-4`} >
+              <Row className={` d-flex justify-content-center`}>
+                <img className={`${style.image} `} src={`/img/avatar.png`} alt="" />
+              </Row>
+              <Row>
+                <Form.Group className={`col-12`} >
+                  <Form.Label>Employee Inventory</Form.Label>
+                  <Form.Control as="select" multiple>
+                    {selectedEmployee.inventoryList.map(each => <option>{`Barcode: ${each.barcode} / Category: ${each.category}`}</option>)}
+                  </Form.Control>
+                </Form.Group>
+              </Row>
+            </Col>

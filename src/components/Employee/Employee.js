@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Employee({employee, setSelectedEmployee}) {
+function Employee({employee, setSelectedEmployee, index}) {
   return (
     <>
       <tr onClick={() => setSelectedEmployee(employee)} >
-        <td>{employee.id}</td>
+        <td>{index + 1}</td>
         <td>{employee.name}</td>
         <td>{employee.identityNumber}</td>
         <td>{employee.gender}</td>

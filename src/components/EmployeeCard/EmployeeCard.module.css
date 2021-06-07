@@ -1,3 +1,4 @@
+
 .image{
   width: 12rem;
   height: 12rem;
@@ -5,4 +6,17 @@
 
 .boldLabel{
   font-weight: bold;
+}
+
+.buttonContainer{
+  height: 100%;
+}
+
+.buttonAdding{
+  height:100%;
+  padding: 2rem 0 2rem 0;
+}
+.buttonSelection{
+  height:30%;
+  padding: 1rem 0 1rem 0;
 }

@@ -10,30 +10,15 @@ import Item from '../../components/Item/Item'
 import ItemCard from '../../components/ItemCard/ItemCard'
 import style from './Inventory.module.css'
 
-function Inventory({ employeeList, setEmployeeList} ) {
+function Inventory({ employeeList, setEmployeeList, inventoryList, setInventoryList} ) {
 
-  useEffect(() => {
-    fetchInventory()
-  }, [])
 
- 
 
   const {slug} = useParams()
   
-  const [inventoryList, setInventoryList] = useState([])
   const [selectedItem, setSelectedItem] = useState("")
   const [editing, setEditing] = useState(false)
   const [adding, setAdding] = useState(false)
-
- 
-
-
-  const fetchInventory = () => {
-    fetch("http://localhost:5000/inventories")
-      .then(response => response.json())
-      .then(data => { setInventoryList(data) })
-      console.log(slug)
-  }
  
 
   return (
@@ -43,12 +28,14 @@ function Inventory({ employeeList, setEmployeeList} ) {
         setAdding={setAdding}
         editing={editing}
         setEditing={setEditing}
-        setInventoryList={setInventoryList}
         inventoryList={inventoryList}
+        setInventoryList={setInventoryList}
         selectedItem={selectedItem}
-        setSelectedItem={setSelectedItem} />
+        setSelectedItem={setSelectedItem}
+        employeeList={employeeList} 
+      />
       <Row className={` ${style.table}`}>
-        {editing || adding ? <h2>Editing...</h2> :
+        {editing || adding ? <h2>...</h2> :
           <Table striped bordered hover  >
             <thead>
               <tr>
@@ -68,7 +55,7 @@ function Inventory({ employeeList, setEmployeeList} ) {
             </thead>
             <tbody>
               {inventoryList.map((each, index) => {
-                return <Item key={index} index={index} item={each} setSelectedItem={setSelectedItem} />
+                return <Item key={index} index={index} item={each} setSelectedItem={setSelectedItem}  />
               })}
 
             </tbody>
