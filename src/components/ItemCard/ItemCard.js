@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Form, Col, Row, Button, Container } from 'react-bootstrap'
 import style from './ItemCard.module.css'
 
-function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setInventoryList, selectedItem, setSelectedItem, employeeList }) {
+function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setInventoryList, selectedItem, setSelectedItem, employeeList,setEmployeeList }) {
 
 
   // Modal version 
@@ -27,15 +27,22 @@ function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setIn
 
   const saveChangesHandler = () => {
     setEditing(!editing)
+
+
     const updatedInventoryList =
       inventoryList.map((each) => {
         if (each.id === updatedItem.id) {
+
+
           each = updatedItem
         }
         return each
       })
     console.log(updatedInventoryList)
+
     setInventoryList(updatedInventoryList)
+
+
 
     fetch(`http://localhost:5000/inventories/${updatedItem.id}`, {
       method: 'PUT',
@@ -46,55 +53,94 @@ function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setIn
     })
       .then(res => res.json())
       .then(data => {
-        if(data.employeeId && data.employeeId !== "Null"){
-          console.log(data)
-
-        }
+        console.log(data)
 
       })
+
+
     // add setUpdateItem("") as async function for clear state
     //
   }
 
   const addItemHandler = (e) => {
     e.preventDefault()
-    if(Object.keys(newItem).length === 11 && Object.values(newItem).every(each => each !== "")){
+    if (Object.keys(newItem).length === 11 && Object.values(newItem).every(each => each !== "")) {
       fetch(`http://localhost:5000/inventories`, {
-      method: 'POST',
-      body: JSON.stringify({ ...newItem }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8"
-      },
-    })
-      .then(res => res.json())
-      .then(data => {
-        setInventoryList([...inventoryList, data])
+        method: 'POST',
+        body: JSON.stringify({ ...newItem }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        },
       })
+        .then(res => res.json())
+        .then(data => {
+          setInventoryList([...inventoryList, data])
+
+        })
       setAdding(!adding)
-      
+
       setNewItem({})
     }
-    
+
 
   }
 
   const deleteHandler = () => {
-    console.log("yes")
-    if ( window.confirm(`Delete the Item has Barcode:${selectedItem.barcode}`) ){
-      fetch(`http://localhost:5000/inventories/${selectedItem.id}`,{
-        method:'DELETE',
-        headers:{
+
+    const updatedInventoryList = inventoryList.filter(each => {
+      return each.id !== selectedItem.id
+    })
+
+    const employee = employeeList.filter(each => {
+      return each.identityNumber === Number(selectedItem.employeeInfo.slice(0,11))
+    })
+    console.log(employee[0])
+    console.log(employee)
+    console.log(updatedInventoryList)
+
+    if (window.confirm(`Delete the Item has Barcode:${selectedItem.id} `)) {
+
+      fetch(`http://localhost:5000/inventories/${selectedItem.id}`, {
+        method: 'DELETE',
+        headers: {
           'Content-Type': 'application/json'
         }
       })
-      .then(res => {
-        res.json()
-        console.log(res)
-      })
-      
-      setInventoryList(inventoryList.filter((each) => {
-        return each.id !== selectedItem.id
-      } ))
+        .then(res => res.json())
+        .then(data => {
+
+          const employee = employeeList.filter(each => {
+            return each.identityNumber === Number(selectedItem.employeeInfo.slice(0,11))
+          })
+          console.log(employee[0])
+          console.log(employee)
+          
+          if(employee.length !== 0){
+            console.log(employee[0])
+
+            fetch(`http://localhost:5000/employees/${employee[0].id}`,{
+              method:'PUT',
+              body:JSON.stringify({...employee[0] , employeeDebit: employee[0].employeeDebit.filter(each => each.id !== selectedItem.id)}),
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            })
+            .then(res => res.json())
+            .then(data => {
+              fetch('http://localhost:5000/employees')
+                .then(res => res.json())
+                .then(data => {
+                  setEmployeeList(data)
+                })
+                
+            })
+
+          }
+          
+        })
+
+
+      setInventoryList([...updatedInventoryList])
 
       setSelectedItem("")
     }
@@ -162,17 +208,17 @@ function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setIn
                         <Form.Control
                           as="select"
                           placeholder="Enter ..."
-                          value={updatedItem.employeeId}     
-                          //setNewItem({ ...newItem, employeeId: e.target.value })                     
-                          onChange={(e) => setUpdatedItem({ ...updatedItem, employeeId: e.target.value }) }
+                          value={updatedItem.employeeInfo}
+                          //setNewItem({ ...newItem, employeeInfo: e.target.value })                     
+                          onChange={(e) => setUpdatedItem({ ...updatedItem, employeeInfo: e.target.value })}
                           disabled={!editing}
                           required
                         >
                           <option>Null</option>
-                          {                             
+                          {
                             employeeList.map((each, index) => {
-                            return <option key={index}> {`${each.identityNumber}-${each.name}`} </option>
-                          })}
+                              return <option key={index}> {`${each.identityNumber}-${each.name}`} </option>
+                            })}
                         </Form.Control>
                       </Form.Group>
 
@@ -260,12 +306,12 @@ function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setIn
                       <Button
                         type="submit"
                         variant="success"
-                        className={`${style.button} col-10`} 
+                        className={`${style.button} col-10`}
                         onClick={saveChangesHandler}
                         size="lg"
-                        >
-                          Save Item
-                        </Button>
+                      >
+                        Save Item
+                      </Button>
                     </Col>
                     <Col className={`col-4 mt-5`} >
                       <Button
@@ -277,7 +323,7 @@ function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setIn
                         size="lg"
                       >
                         Cancel
-                </Button>
+                      </Button>
                     </Col>
 
                   </Form.Row>
@@ -353,20 +399,20 @@ function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setIn
                   <Form.Group >
                     <Form.Label className={` ${style.boldLabel} `} >Employee Id</Form.Label>
                     <Form.Control
-                          as="select"
-                          placeholder="Enter ..."
-                          value={updatedItem.employeeId}     
-                          //setNewItem({ ...newItem, employeeId: e.target.value })                     
-                          onChange={(e) => setUpdatedItem({ ...updatedItem, employeeId: e.target.value }) }
-                          disabled={!editing}
-                          required
-                        >
-                          <option>Null</option>
-                          {                             
-                            employeeList.map((each, index) => {
-                            return <option key={index}> {`${each.identityNumber}-${each.name}`} </option>
-                          })}
-                        </Form.Control>
+                      as="select"
+                      placeholder="Enter ..."
+                      value={updatedItem.employeeInfo}
+                      //setNewItem({ ...newItem, employeeInfo: e.target.value })                     
+                      onChange={(e) => setUpdatedItem({ ...updatedItem, employeeInfo: e.target.value })}
+                      disabled={!editing}
+                      required
+                    >
+                      <option>Null</option>
+                      {
+                        employeeList.map((each, index) => {
+                          return <option key={index}> {`${each.identityNumber}-${each.name}`} </option>
+                        })}
+                    </Form.Control>
                   </Form.Group>
                 </Form>
               </Col>
@@ -440,7 +486,7 @@ function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setIn
                     />
                   </Form.Group>
                 </Row>
-                
+
 
               </Col>
             </Row>
@@ -499,16 +545,16 @@ function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setIn
                         <Form.Control
                           as="select"
                           placeholder="Enter ..."
-                          value={newItem.employeeId}     
-                          //setNewItem({ ...newItem, employeeId: e.target.value })                     
-                          onChange={(e) => setNewItem({ ...newItem, employeeId: e.target.value }) }
+                          value={newItem.employeeInfo}
+                          //setNewItem({ ...newItem, employeeInfo: e.target.value })                     
+                          onChange={(e) => setNewItem({ ...newItem, employeeInfo: e.target.value })}
                           required
                         >
                           <option>Null</option>
-                          {                             
+                          {
                             employeeList.map((each, index) => {
-                            return <option key={index}> {`${each.identityNumber}-${each.name}`} </option>
-                          })}
+                              return <option key={index}> {`${each.identityNumber}-${each.name}`} </option>
+                            })}
                         </Form.Control>
                       </Form.Group>
 
@@ -587,16 +633,16 @@ function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setIn
                   </Form.Row>
                   <Form.Row className={`justify-content-center`}>
                     <Col className={`col-4 mt-5`} >
-                      <Button 
-                        size="lg" 
-                        type="submit" 
-                        variant="success" 
-                        className={`${style.button} col-10`} 
+                      <Button
+                        size="lg"
+                        type="submit"
+                        variant="success"
+                        className={`${style.button} col-10`}
                         onClick={addItemHandler}
-                        disabled={!(Object.keys(newItem).length === 11 && Object.values(newItem).every(each => each !== "")) }
-                        >
-                          Save Item
-                        </Button>
+                        disabled={!(Object.keys(newItem).length === 11 && Object.values(newItem).every(each => each !== ""))}
+                      >
+                        Save Item
+                      </Button>
                     </Col>
                     <Col className={`col-4 mt-5`} >
                       <Button
@@ -609,7 +655,7 @@ function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setIn
                         }}
                       >
                         Cancel
-                    </Button>
+                      </Button>
                     </Col>
 
                   </Form.Row>
@@ -628,7 +674,7 @@ function ItemCard({ adding, setAdding, editing, setEditing, inventoryList, setIn
                   <Row className={`${style.buttonAdding} justify-content-center`} >
                     <Button size="lg" className={`${style.buttonNewItem} col-10`} onClick={() => setAdding(!adding)} block>New Item</Button>
                   </Row>
-                  
+
                 </Container>
               </Col>
               <Col className={` col-3 `}>

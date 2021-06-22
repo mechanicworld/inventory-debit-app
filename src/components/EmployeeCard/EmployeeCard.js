@@ -13,7 +13,7 @@ function EmployeeCard({ adding, setAdding, editing, setEditing, selectedEmployee
   const [updatedEmployee, setUpdatedEmployee] = useState("")
   const [newEmployee, setNewEmployee] = useState({
     "image": "avatar",
-    "inventoryList":[]
+    "employeeDebit":[]
   })
 
   const editingHandler = () => {
@@ -68,7 +68,7 @@ function EmployeeCard({ adding, setAdding, editing, setEditing, selectedEmployee
       setNewEmployee(
         {
           "image": "avatar",
-          "inventoryList":[]
+          "employeeDebit":[]
         }
       )
     }
@@ -155,10 +155,8 @@ function EmployeeCard({ adding, setAdding, editing, setEditing, selectedEmployee
                           required
                         />
                       </Form.Group>
-
-
                     </Col>
-
+                    
                     <Col className={` col-4 `}>
                       <Form.Group >
                         <Form.Label className={` ${style.boldLabel} `} >Department</Form.Label>
@@ -214,7 +212,7 @@ function EmployeeCard({ adding, setAdding, editing, setEditing, selectedEmployee
                         <Form.Group className={`col-12`} >
                           <Form.Label>Employee Inventory</Form.Label>
                           <Form.Control as="select" multiple>
-                            {selectedEmployee.inventoryList.map(each => <option>{`Barcode: ${each.barcode} / Category: ${each.category}`}</option>)}
+                            {selectedEmployee.employeeDebit.map(each => <option>{`Barcode: ${each.barcode} / Category: ${each.category}`}</option>)}
                           </Form.Control>
                         </Form.Group>
                       </Row>
@@ -262,6 +260,11 @@ function EmployeeCard({ adding, setAdding, editing, setEditing, selectedEmployee
                       size="lg"
                       onClick={() => {
                         setSelectedEmployee("")
+                        fetch('http://localhost:5000/employees')
+                          .then(res => res.json())
+                          .then(data => {
+                            setEmployeeList([...data])
+                          })
 
                       }}
                       block> Clear Selection </Button>
@@ -370,7 +373,7 @@ function EmployeeCard({ adding, setAdding, editing, setEditing, selectedEmployee
                   <Form.Group className={`col-12`} >
                     <Form.Label>Employee Inventory</Form.Label>
                     <Form.Control as="select" multiple>
-                      {selectedEmployee.inventoryList.map(each => <option>{`Barcode: ${each.barcode} / Category: ${each.category}`}</option>)}
+                      {selectedEmployee.employeeDebit.map(each => <option>{`Barcode: ${each.barcode} / Category: ${each.category}`}</option>)}
                     </Form.Control>
                   </Form.Group>
                 </Row>
@@ -480,7 +483,7 @@ function EmployeeCard({ adding, setAdding, editing, setEditing, selectedEmployee
                       <Row>
                         <Form.Group className={`col-12`} >
                           <Form.Label>Employee Inventory</Form.Label>
-                          <Form.Control as="select" multiple value={newEmployee.inventoryList}>
+                          <Form.Control as="select" multiple value={newEmployee.employeeDebit}>
                             <option>Null</option>
                           </Form.Control>
                         </Form.Group>
@@ -510,7 +513,7 @@ function EmployeeCard({ adding, setAdding, editing, setEditing, selectedEmployee
                           setNewEmployee(
                             {
                               "image": "avatar",
-                              "inventoryList":[]
+                              "employeeDebit":[]
                             }
                           )
                         }}

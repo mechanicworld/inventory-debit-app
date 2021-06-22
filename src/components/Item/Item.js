@@ -1,10 +1,10 @@
 import React from 'react'
 import style from './Item.module.css'
 
-function Item({item, setSelectedItem, index}) {
+function Item({ item, setSelectedItem, index }) {
   return (
     <>
-      <tr className={ style.row }  onClick={() => setSelectedItem(item)} >
+      <tr className={style.row} onClick={() => setSelectedItem(item)} >
         <td>{index + 1}</td>
         <td>{item.barcode}</td>
         <td>{item.serialNumber}</td>
@@ -15,8 +15,8 @@ function Item({item, setSelectedItem, index}) {
         <td>{item.brand}</td>
         <td>{item.model}</td>
         <td>{item.category}</td>
-        <td>{`${item.information.slice(0,10)}...`}</td>
-        <td>{item.employeeId}</td>
+        <td>{`${item.information.slice(0, 10)}...`}</td>
+        <td>{item.employeeInfo}</td>
       </tr>
     </>
   )

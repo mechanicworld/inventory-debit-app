@@ -33,6 +33,7 @@ function Inventory({ employeeList, setEmployeeList, inventoryList, setInventoryL
         selectedItem={selectedItem}
         setSelectedItem={setSelectedItem}
         employeeList={employeeList} 
+        setEmployeeList={setEmployeeList}
       />
       <Row className={` ${style.table}`}>
         {editing || adding ? <h2>...</h2> :

@@ -11,21 +11,7 @@
       "birthday": "21.01.1989",
       "startDayOfEmployment": "21.01.2016",
       "endDayOfEmployement": "-",
-      "inventoryList": [
-        {
-          "id": 1,
-          "barcode": 1,
-          "serialNumber": 1,
-          "boughtFrom": "Test Ticaret",
-          "invoiceNumber": 123,
-          "invoiceDate": "16.05.2015",
-          "guaranteeExpire": "16.05.2017",
-          "brand": "Samsung",
-          "model": "Note 8s",
-          "category": "Cell phone",
-          "information": "Lorem ipsum"
-        }
-      ]
+      "employeeDebit": []
     },
     {
       "id": 2,
@@ -38,21 +24,7 @@
       "birthday": "21.01.1989",
       "startDayOfEmployment": "21.01.2016",
       "endDayOfEmployement": "-",
-      "inventoryList": [
-        {
-          "id": 2,
-          "barcode": 2,
-          "serialNumber": 2,
-          "boughtFrom": "Test Ticaret",
-          "invoiceNumber": 124,
-          "invoiceDate": "16.05.2015",
-          "guaranteeExpire": "16.05.2017",
-          "brand": "Samsung",
-          "model": "Note 8s",
-          "category": "Cell phone",
-          "information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        }
-      ]
+      "employeeDebit": []
     },
     {
       "id": 3,
@@ -65,21 +37,7 @@
       "birthday": "21.01.1989",
       "startDayOfEmployment": "21.01.2016",
       "endDayOfEmployement": "-",
-      "inventoryList": [
-        {
-          "id": 3,
-          "barcode": 3,
-          "serialNumber": 3,
-          "boughtFrom": "Test Ticaret",
-          "invoiceNumber": 125,
-          "invoiceDate": "16.05.2015",
-          "guaranteeExpire": "16.05.2017",
-          "brand": "Samsung",
-          "model": "Note 8s",
-          "category": "Cell phone",
-          "information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna"
-        }
-      ]
+      "employeeDebit": []
     },
     {
       "id": 4,
@@ -92,21 +50,7 @@
       "birthday": "21.01.1989",
       "startDayOfEmployment": "21.01.2016",
       "endDayOfEmployement": "-",
-      "inventoryList": [
-        {
-          "id": 4,
-          "barcode": 4,
-          "serialNumber": 4,
-          "boughtFrom": "Test Ticaret",
-          "invoiceNumber": 126,
-          "invoiceDate": "16.05.2015",
-          "guaranteeExpire": "16.05.2017",
-          "brand": "Samsung",
-          "model": "Note 8s",
-          "category": "Cell phone",
-          "information": "Lorem ipsum dolor sit amet, consectetur adipiscin didunt ut labore et dolore magna"
-        }
-      ]
+      "employeeDebit": []
     },
     {
       "id": 5,
@@ -119,25 +63,26 @@
       "birthday": "21.01.1989",
       "startDayOfEmployment": "21.01.2016",
       "endDayOfEmployement": "-",
-      "inventoryList": [
+      "employeeDebit": [
         {
-          "id": 5,
-          "barcode": 5,
-          "serialNumber": 5,
-          "boughtFrom": "Test Ticaret",
-          "invoiceNumber": 127,
-          "invoiceDate": "16.05.2015",
-          "guaranteeExpire": "16.05.2017",
-          "brand": "Samsung",
-          "model": "Note 8s",
-          "category": "Cell phone",
-          "information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna"
+          "barcode": "4",
+          "serialNumber": "fdsf",
+          "boughtFrom": "f",
+          "invoiceNumber": "f",
+          "invoiceDate": "ff",
+          "brand": "f",
+          "model": "f",
+          "category": "f",
+          "information": "f",
+          "employeeInfo": "12345678914 - Test User 5",
+          "guaranteeExpire": "f",
+          "id": 4
         }
       ]
     },
     {
       "image": "avatar",
-      "inventoryList": [],
+      "employeeDebit": [],
       "name": "asdf",
       "identityNumber": "asdf",
       "gender": "asdf",
@@ -150,143 +95,137 @@
     },
     {
       "image": "avatar",
-      "inventoryList": [],
-      "name": "asdf",
-      "identityNumber": "asdf",
-      "gender": "asdf",
-      "title": "asdf",
-      "department": "asdf",
-      "birthday": "asdf",
-      "startDayOfEmployment": "asdf",
-      "endDayOfEmployement": "asdfasdf",
+      "employeeDebit": [
+        {
+          "barcode": "2",
+          "serialNumber": "asdf",
+          "boughtFrom": "asdf",
+          "invoiceNumber": "asdf",
+          "employeeInfo": "12345678911 - Oguz",
+          "invoiceDate": "asdf",
+          "guaranteeExpire": "asdf",
+          "brand": "asdf",
+          "model": "asdf",
+          "category": "asdf",
+          "information": "asdf",
+          "id": 2
+        },
+        {
+          "barcode": "123123",
+          "serialNumber": "3234242",
+          "boughtFrom": "test",
+          "invoiceNumber": "4455454",
+          "employeeInfo": "12345678911 - Oguz",
+          "invoiceDate": "546456",
+          "guaranteeExpire": "4565666",
+          "brand": "5646",
+          "model": "5656",
+          "category": "5656",
+          "information": "565665",
+          "id": 8
+        }
+      ],
+      "name": "Oguz",
+      "identityNumber": "12345678911",
+      "gender": "male",
+      "title": "Intern",
+      "department": "IT",
+      "birthday": "21.03.1993",
+      "startDayOfEmployment": "-",
+      "endDayOfEmployement": "-",
       "id": 7
-    },
-    {
-      "image": "avatar",
-      "inventoryList": [],
-      "name": "asdf",
-      "identityNumber": "asdf",
-      "gender": "asdf",
-      "title": "asdf",
-      "department": "asdf",
-      "birthday": "asdf",
-      "startDayOfEmployment": "asdf",
-      "endDayOfEmployement": "asdf",
-      "id": 8
     }
   ],
   "inventories": [
     {
-      "id": 1,
-      "barcode": 1,
-      "serialNumber": "12",
-      "boughtFrom": "Test Ticaret",
-      "invoiceNumber": 123,
-      "invoiceDate": "16.05.2015",
-      "guaranteeExpire": "16.05.2017",
-      "brand": "Samsung",
-      "model": "Note 8s",
-      "category": "Cell phone",
-      "information": "Lorem ipsum",
-      "employeeId": "12345678910-Test User"
-    },
-    {
-      "id": 2,
-      "barcode": 2,
-      "serialNumber": 2,
-      "boughtFrom": "Test Ticaret",
-      "invoiceNumber": 124,
-      "invoiceDate": "16.05.2015",
-      "guaranteeExpire": "16.05.2017",
-      "brand": "Samsung",
-      "model": "Note 8s",
-      "category": "Cell phone",
-      "information": "Lorem ipsum",
-      "employeeId": "12345678911-Test User2"
-    },
-    {
-      "id": 3,
-      "barcode": 3,
-      "serialNumber": 3,
-      "boughtFrom": "Test Ticaret",
-      "invoiceNumber": 125,
-      "invoiceDate": "16.05.2015",
-      "guaranteeExpire": "16.05.2017",
-      "brand": "Samsung",
-      "model": "Note 8s",
-      "category": "Cell phone",
-      "information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
-      "employeeId": "12345678914-Test User 5"
-    },
-    {
-      "id": 4,
-      "barcode": 4,
-      "serialNumber": 4,
-      "boughtFrom": "Test Ticaret",
-      "invoiceNumber": "128",
-      "invoiceDate": "16.05.2015",
-      "guaranteeExpire": "16.05.2017",
-      "brand": "Samsung",
-      "model": "Note 8s",
-      "category": "Cell phone",
-      "information": "Lorem ipsum dolor sit amet, consectetur adipiscin didunt ut labore et dolore magna",
-      "employeeId": "Null"
-    },
-    {
-      "id": 5,
-      "barcode": 5,
-      "serialNumber": 5,
-      "boughtFrom": "Test Ticaret",
-      "invoiceNumber": 127,
-      "invoiceDate": "16.05.2015",
-      "guaranteeExpire": "16.05.2019",
-      "brand": "Samsung",
-      "model": "Note 8s",
-      "category": "Cell phoneaa",
-      "information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna",
-      "employeeId": "12345678914-Test User 5"
-    },
-    {
-      "barcode": "6",
-      "serialNumber": "7",
-      "boughtFrom": "test",
-      "invoiceNumber": "test",
-      "employeeId": "12345678913-Test User 4",
-      "category": "car",
-      "model": "Leon 2017 1.6 TDI",
-      "brand": "Seat",
-      "invoiceDate": "21.09.17",
-      "guaranteeExpire": "-",
-      "information": "Test",
-      "id": 6
-    },
-    {
-      "barcode": "asdfasdf",
+      "barcode": "2",
       "serialNumber": "asdf",
-      "invoiceNumber": "f",
+      "boughtFrom": "asdf",
+      "invoiceNumber": "asdf",
+      "employeeInfo": "12345678911 - Oguz",
+      "invoiceDate": "asdf",
+      "guaranteeExpire": "asdf",
+      "brand": "asdf",
+      "model": "asdf",
+      "category": "asdf",
+      "information": "asdf",
+      "id": 2
+    },
+    {
+      "barcode": "4",
+      "serialNumber": "fdsf",
       "boughtFrom": "f",
-      "employeeId": "12345678912-Test User 3",
-      "invoiceDate": "fd",
-      "guaranteeExpire": "f",
+      "invoiceNumber": "f",
+      "invoiceDate": "ff",
       "brand": "f",
       "model": "f",
       "category": "f",
       "information": "f",
-      "id": 7
+      "employeeInfo": "12345678914 - Test User 5",
+      "guaranteeExpire": "f",
+      "id": 4
     },
     {
-      "barcode": "sdfa",
-      "serialNumber": "asdf",
-      "boughtFrom": "asdf",
-      "invoiceNumber": "asfd",
-      "employeeId": "12345678914-Test User 5",
-      "invoiceDate": "asdf",
-      "guaranteeExpire": "asdf",
-      "brand": "asdf",
-      "model": "asfd",
-      "category": "asdf",
-      "information": "asdf",
+      "barcode": "123123",
+      "serialNumber": "3234242",
+      "boughtFrom": "test",
+      "invoiceNumber": "4455454",
+      "employeeInfo": "12345678911 - Oguz",
+      "invoiceDate": "546456",
+      "guaranteeExpire": "4565666",
+      "brand": "5646",
+      "model": "5656",
+      "category": "5656",
+      "information": "565665",
       "id": 8
+    },
+    {
+      "barcode": "3434",
+      "serialNumber": "3434",
+      "boughtFrom": "3434",
+      "invoiceNumber": "3434",
+      "invoiceDate": "3434",
+      "guaranteeExpire": "3434",
+      "brand": "3434",
+      "model": "3434",
+      "category": "3434",
+      "information": "3434",
+      "employeeInfo": "Null",
+      "id": 9
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "TELEFON"
+    },
+    {
+      "id": 2,
+      "name": "LAPTOP"
+    },
+    {
+      "id": 3,
+      "name": "MODEM"
+    }
+  ],
+  "brands": [
+    {
+      "id": 1,
+      "name": "HP",
+      "category": "LAPTOP"
+    },
+    {
+      "id": 2,
+      "name": "DELL",
+      "category": "LAPTOP"
+    }
+  ],
+  "models": [
+    {
+      "id": 1,
+      "name": "PROBOOK 400 G1",
+      "brand": "HP",
+      "category": "LAPTOP"
     }
   ]
 }
