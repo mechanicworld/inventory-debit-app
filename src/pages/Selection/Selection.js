@@ -6,6 +6,7 @@ import {
 
 import style from './Selection.module.css'
 import CategoryCard from '../../components/CategoryCard/CategoryCard'
+import BrandCard from '../../components/BrandCard/BrandCard'
 
 function Selection({categoryList, setCategoryList, brandList, setBrandList, modelList, setModelList }) {
   return (
@@ -15,6 +16,11 @@ function Selection({categoryList, setCategoryList, brandList, setBrandList, mode
           <CategoryCard 
           categoryList={categoryList}
           setCategoryList={setCategoryList}
+          />
+          <BrandCard
+          brandList={brandList}
+          setBrandList={setBrandList}
+          categoryList={categoryList}
           />
         </Row>
       </Container>

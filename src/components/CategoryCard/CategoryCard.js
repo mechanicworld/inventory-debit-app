@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import CategoryRow from './CategoryRow/CategoryRow'
 import {
-
   Card,
   Button,
   ListGroup,
@@ -32,6 +31,7 @@ function CategoryCard({ categoryList, setCategoryList }) {
         .then(res => res.json())
         .then(data => setCategoryList([...categoryList, data]))
         .then(setCategoryList([]))
+        
 
     } else {
       console.log("Category field is empty")

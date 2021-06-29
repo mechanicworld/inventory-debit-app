@@ -206,6 +206,14 @@
     {
       "id": 3,
       "name": "MODEM"
+    },
+    {
+      "name": "AAA",
+      "id": 4
+    },
+    {
+      "name": "ASDFDF",
+      "id": 5
     }
   ],
   "brands": [
@@ -218,6 +226,21 @@
       "id": 2,
       "name": "DELL",
       "category": "LAPTOP"
+    },
+    {
+      "name": "IPHONE",
+      "category": "TELEFON",
+      "id": 3
+    },
+    {
+      "name": "ASDF",
+      "category": "MODEM",
+      "id": 4
+    },
+    {
+      "name": "ASDFASD",
+      "category": "AAA",
+      "id": 5
     }
   ],
   "models": [
