@@ -30,11 +30,12 @@ function CategoryCard({ categoryList, setCategoryList }) {
       })
         .then(res => res.json())
         .then(data => setCategoryList([...categoryList, data]))
-        .then(setCategoryList([]))
+        
         
 
     } else {
       console.log("Category field is empty")
+      console.log(categoryList)
       alert("Kategori alanını doldurunuz")
     }
 
@@ -46,7 +47,7 @@ function CategoryCard({ categoryList, setCategoryList }) {
 
   return (
     <>
-      <Card style={{ width: '18rem' }}>
+      <Card style={{ width: '22rem' }}>
         <Card.Body>
           <Card.Title>Kategori Ekle</Card.Title>
           <ListGroup variant="flush">

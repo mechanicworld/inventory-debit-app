@@ -36,13 +36,14 @@ function BrandCard({ brandList, setBrandList, categoryList }) {
 
     } else {
       console.log("Category/Brand field is empty")
+      console.log(categoryList)
       alert("Kategori / Brand alanları bos bırakılamaz")
     }
   }
 
   return (
     <>
-      <Card style={{ width: '18rem' }}>
+      <Card style={{ width: '22rem' }}>
         <Card.Body>
           <Card.Title>Marka Ekle</Card.Title>
           {categoryList.map((categoryItem,index)=> {

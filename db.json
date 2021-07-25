@@ -204,16 +204,8 @@
       "name": "LAPTOP"
     },
     {
-      "id": 3,
-      "name": "MODEM"
-    },
-    {
-      "name": "AAA",
-      "id": 4
-    },
-    {
-      "name": "ASDFDF",
-      "id": 5
+      "name": "MODEM",
+      "id": 3
     }
   ],
   "brands": [
@@ -233,14 +225,19 @@
       "id": 3
     },
     {
-      "name": "ASDF",
-      "category": "MODEM",
+      "name": "SAMSUNG",
+      "category": "TELEFON",
       "id": 4
     },
     {
-      "name": "ASDFASD",
-      "category": "AAA",
+      "name": "XAOMI",
+      "category": "TELEFON",
       "id": 5
+    },
+    {
+      "name": "KUMTEL",
+      "category": "MODEM",
+      "id": 6
     }
   ],
   "models": [
@@ -249,6 +246,36 @@
       "name": "PROBOOK 400 G1",
       "brand": "HP",
       "category": "LAPTOP"
+    },
+    {
+      "name": "X",
+      "category": "TELEFON",
+      "brand": "IPHONE",
+      "id": 2
+    },
+    {
+      "name": "PROBOOK 415 G2",
+      "category": "LAPTOP",
+      "brand": "HP",
+      "id": 3
+    },
+    {
+      "name": "DELL VOSTRO 5502 INTEL CORE I5 1135G7",
+      "category": "LAPTOP",
+      "brand": "DELL",
+      "id": 4
+    },
+    {
+      "name": "MI A2 LITE",
+      "category": "TELEFON",
+      "brand": "XAOMI",
+      "id": 5
+    },
+    {
+      "name": "XS",
+      "category": "TELEFON",
+      "brand": "IPHONE",
+      "id": 6
     }
   ]
 }
